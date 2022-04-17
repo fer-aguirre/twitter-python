@@ -1,2 +1,3 @@
-# Twitter API for Python
-Examples of Twitter data collection with Tweepy
+# Twitter API for Python 🐦
+
+Examples for Twitter data collection with Tweepy
