@@ -1,14 +1,17 @@
-import tweepy as tw
+import configparser
 import csv
 import re
+import tweepy as tw
 
 def main():
-
-    # Oauth keys
-    consumer_key = '*****'
-    consumer_secret = '*****'
-    access_key = '*****'
-    access_secret = '*****'
+    # Get API tokens
+    parser = configparser.ConfigParser()
+    parser.read("config.ini")
+    parser.sections()
+    consumer_key = parser.get('twitter', 'consumer_key')
+    consumer_secret = parser.get('twitter', 'consumer_secret')
+    access_key = parser.get('twitter', 'access_key')
+    access_secret = parser.get('twitter', 'access_secret')
 
     # Authentication with Twitter
     auth = tw.OAuthHandler(consumer_key, consumer_secret)
